@@ -19,5 +19,14 @@ public class ListServlet extends HttpServlet {
         req.getRequestDispatcher("WEB-INF/list.jsp").forward(req, res);
 
     }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse res)
+            throws ServletException, IOException {
+
+
+        req.getRequestDispatcher("WEB-INF/list.jsp").forward(req, res);
+
+    }
 }
 
