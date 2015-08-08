@@ -8,9 +8,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title></title>
+    <title>dsds</title>
 </head>
 <body>
-todo
+<form action="todo" method="post">
+    <%--Id: <input type="text" name="id">--%>
+    Name: <input type="text" name="name">
+    Description: <input type="text" name="description">
+    Done: <input type="text" name="done">
+    <input type="submit" value="Submit">
+
+</form>
 </body>
 </html>
