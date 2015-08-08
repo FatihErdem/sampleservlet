@@ -7,17 +7,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = "/hello")
-public class HomeServlet extends HttpServlet {
+
+@WebServlet(urlPatterns = "/list")
+public class ListServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res)
             throws ServletException, IOException {
 
 
-        req.setAttribute("message", "this is my message");
-
-        req.getRequestDispatcher("WEB-INF/hello.jsp").forward(req, res);
+        req.getRequestDispatcher("WEB-INF/list.jsp").forward(req, res);
 
     }
 }
+
