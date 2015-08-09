@@ -14,7 +14,7 @@ public class HomeServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse res)
             throws ServletException, IOException {
 
-        req.setAttribute("message", "this is my message");
+
 
         req.getRequestDispatcher("WEB-INF/hello.jsp").forward(req, res);
 

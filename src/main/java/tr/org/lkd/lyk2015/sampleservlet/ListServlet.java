@@ -26,13 +26,16 @@ public class ListServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse res)
             throws ServletException, IOException {
 
-        String id = req.getParameter("id");
-        Todo todo = Storage.getById(Long.parseLong(id));
-        todo.setDone(true);
 
+        String[] ids = req.getParameterValues("id");
+
+        for (String doneId : ids) {
+
+            Todo todo = Storage.getById(Long.parseLong(doneId));
+            todo.setDone(true);
+        }
 
         res.sendRedirect("list");
-
     }
 }
 

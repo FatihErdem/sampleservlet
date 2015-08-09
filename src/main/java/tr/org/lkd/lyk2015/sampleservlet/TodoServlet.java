@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 @WebServlet(urlPatterns = "/todo")
@@ -30,13 +31,19 @@ public class TodoServlet extends HttpServlet {
         String desc = req.getParameter("desc");
         String dueDate = req.getParameter("dueDate");
 
-        System.out.println(dueDate);
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = null;
+        try {
+            date = sdf.parse(dueDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
 
 
-
-
-        Todo todo = new Todo(name, desc, null);
-        //TODO parse date as a calendar
+        Todo todo = new Todo(name, desc, cal);
 
         Storage.add(todo);
 
