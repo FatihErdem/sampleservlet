@@ -31,8 +31,7 @@ public class ListServlet extends HttpServlet {
 
         for (String doneId : ids) {
 
-            Todo todo = Storage.getById(Long.parseLong(doneId));
-            todo.setDone(true);
+            Storage.markAsDone(Long.parseLong(doneId));
         }
 
         res.sendRedirect("list");

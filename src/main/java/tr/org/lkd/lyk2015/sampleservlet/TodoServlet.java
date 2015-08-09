@@ -44,10 +44,7 @@ public class TodoServlet extends HttpServlet {
 
 
         Todo todo = new Todo(name, desc, cal);
-
         Storage.add(todo);
-
-
 
         res.sendRedirect("list");
 

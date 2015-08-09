@@ -23,16 +23,11 @@
         </li>
     </c:if>
 
-
     <form action="list" method="post">
         <c:if test="${!todo.done}">
-
-
-            <input type="checkbox" name="id" value="${todo.id}">
-            <li>${todo.name}</li>
-
+            <tr><input type="checkbox" name="id" value="${todo.id}">
+            <li>${todo.name}</li></tr>
         </c:if>
-
         </c:forEach>
         <button>Check done</button>
     </form>
