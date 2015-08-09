@@ -1,5 +1,6 @@
 package tr.org.lkd.lyk2015.sampleservlet;
 
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -26,5 +27,13 @@ public class Storage {
     public static void markAsDone(Long id) {
         Todo todo = todos.get(id);
         todo.setDone(true);
+    }
+
+    public static void updateTodo(Long id, String name, String desc, Calendar dueDate, Boolean done){
+        Todo todo = todos.get(id);
+        todo.setName(name);
+        todo.setDesc(desc);
+        todo.setDueDate(dueDate);
+        todo.setDone(done);
     }
 }
