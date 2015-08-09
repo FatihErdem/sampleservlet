@@ -16,14 +16,14 @@
 <form action="update" method="post">
     <input type="hidden" name="id" value="${todo.id}">
     <br>
-<input type="text" name="name" value="${todo.name}">
-<br>
-<input type="text" name="desc" value="${todo.desc}">
-<br>
-<input type="date" name="dueDate" value="${todo.dueDate}">
-<br>
+    <input type="text" name="name" value="${todo.name}">
+    <br>
+    <input type="text" name="desc" value="${todo.desc}">
+    <br>
+    <input type="date" name="dueDate" value="${todo.dueDate}">
+    <br>
     <label>Is Done?</label>
-    <input type="checkbox" name="done">
+    <input type="checkbox" name="done" <c:if test="${todo.done}">checked</c:if>>
     <br>
 <button>Update the Todo</button>
 

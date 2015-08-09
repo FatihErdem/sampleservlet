@@ -34,6 +34,15 @@ public class UpdateServlet extends HttpServlet{
         String done = req.getParameter("done");
 
 
+
+        if (done != null && !done.isEmpty()) {
+            Boolean bool = true;
+            done = Boolean.toString(bool);
+        } else {
+            Boolean bool = false;
+            done = Boolean.toString(bool);
+        }
+
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Date date = null;
         try {
@@ -45,7 +54,10 @@ public class UpdateServlet extends HttpServlet{
         cal.setTime(date);
 
         Storage.updateTodo(Long.parseLong(id), name, desc, cal, Boolean.parseBoolean(done));
+
+        req.setAttribute("message", "Update edildi");
         resp.sendRedirect("list");
+
 
     }
 }

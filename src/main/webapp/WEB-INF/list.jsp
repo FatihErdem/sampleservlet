@@ -19,14 +19,17 @@
 
     <c:if test="${todo.done}">
         <li>
-            <del>${todo.name}</del>
+            <a href="update?id=${todo.id}"><del>${todo.name}</del></a>
+
         </li>
     </c:if>
 
     <form action="list" method="post">
         <c:if test="${!todo.done}">
+        <li>
             <tr><input type="checkbox" name="id" value="${todo.id}">
-            <li>${todo.name}</li></tr>
+                <a href="update?id=${todo.id}">${todo.name}</a>
+        </li>
         </c:if>
         </c:forEach>
         <button>Check done</button>
