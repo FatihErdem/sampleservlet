@@ -7,6 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @WebServlet(urlPatterns = "/todo")
 public class TodoServlet extends HttpServlet {
@@ -22,26 +26,23 @@ public class TodoServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse res)
             throws ServletException, IOException {
 
-//        String id = req.getParameter("id");
         String name = req.getParameter("name");
-        String description = req.getParameter("description");
-//        String date = req.getParameter("date");
-        String done = req.getParameter("done");
+        String desc = req.getParameter("desc");
+        String dueDate = req.getParameter("dueDate");
 
-//        System.out.println(id);
-        System.out.println(name);
+        System.out.println(dueDate);
 
-        Todo myTodo = new Todo();
-//        myTodo.id = Integer.parseInt(id);
-        myTodo.name = name;
-        myTodo.description = description;
-        myTodo.done = Boolean.valueOf(done);
 
-        Storage myStorage = new Storage();
-        myStorage.Push(myTodo);
 
-        req.getRequestDispatcher("WEB-INF/todo.jps").forward(req, res);
 
+        Todo todo = new Todo(name, desc, null);
+        //TODO parse date as a calendar
+
+        Storage.add(todo);
+
+
+
+        res.sendRedirect("list");
 
     }
 }

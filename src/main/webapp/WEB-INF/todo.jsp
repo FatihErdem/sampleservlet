@@ -11,12 +11,17 @@
     <title>dsds</title>
 </head>
 <body>
+
 <form action="todo" method="post">
-    <%--Id: <input type="text" name="id">--%>
-    Name: <input type="text" name="name">
-    Description: <input type="text" name="description">
-    Done: <input type="text" name="done">
-    <input type="submit" value="Submit">
+
+    <input type="text" name="name">
+    <br>
+    <input type="text" name="desc">
+    <br>
+    <input type="date" name="dueDate">
+    <br>
+    <button>Create new Todo</button>
+
 
 </form>
 </body>

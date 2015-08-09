@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Locale;
 
 
 @WebServlet(urlPatterns = "/list")
@@ -16,6 +17,7 @@ public class ListServlet extends HttpServlet {
             throws ServletException, IOException {
 
 
+        req.setAttribute("todos", Storage.getAll());
         req.getRequestDispatcher("WEB-INF/list.jsp").forward(req, res);
 
     }
@@ -24,8 +26,12 @@ public class ListServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse res)
             throws ServletException, IOException {
 
+        String id = req.getParameter("id");
+        Todo todo = Storage.getById(Long.parseLong(id));
+        todo.setDone(true);
 
-        req.getRequestDispatcher("WEB-INF/list.jsp").forward(req, res);
+
+        res.sendRedirect("list");
 
     }
 }
