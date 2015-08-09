@@ -40,7 +40,7 @@ public class TodoServlet extends HttpServlet {
         Storage myStorage = new Storage();
         myStorage.Push(myTodo);
 
-        req.getRequestDispatcher("WEB-INF/list.jps");
+        req.getRequestDispatcher("WEB-INF/todo.jps").forward(req, res);
 
 
     }
