@@ -34,7 +34,6 @@ public class UpdateServlet extends HttpServlet{
         String done = req.getParameter("done");
 
 
-
         if (done != null && !done.isEmpty()) {
             Boolean bool = true;
             done = Boolean.toString(bool);
@@ -57,7 +56,6 @@ public class UpdateServlet extends HttpServlet{
 
         req.setAttribute("message", "Update edildi");
         resp.sendRedirect("list");
-
 
     }
 }
