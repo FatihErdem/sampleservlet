@@ -20,15 +20,15 @@
     <br>
     <input type="text" name="desc" value="${todo.desc}">
     <br>
-    <input type="date" name="dueDate" value="${todo.dueDate}">
+    <input type="date" name="dueDate" value="${todo.getDate()}"><br>
     <br>
     <label>Is Done?</label>
     <input type="checkbox" name="done" <c:if test="${todo.done}">checked</c:if>>
     <br>
 <button>Update the Todo</button>
-
-
 </form>
+
+<p>${message}</p>
 
 </body>
 </html>
