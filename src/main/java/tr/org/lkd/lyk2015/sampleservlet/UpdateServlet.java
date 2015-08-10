@@ -56,7 +56,6 @@ public class UpdateServlet extends HttpServlet{
         Storage.updateTodo(Long.parseLong(id), name, desc, cal, Boolean.parseBoolean(done));
 
         req.setAttribute("message", "Update edildi");
-
         req.setAttribute("todo", Storage.getById(Long.parseLong(id)));
         req.getRequestDispatcher("WEB-INF/update.jsp").forward(req, resp);
     }
