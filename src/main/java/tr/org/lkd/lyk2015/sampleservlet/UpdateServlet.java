@@ -12,17 +12,14 @@ import java.util.Calendar;
 import java.util.Date;
 
 @WebServlet(urlPatterns = "/update")
-public class UpdateServlet extends HttpServlet{
+public class UpdateServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String id = req.getParameter("id");
         req.setAttribute("todo", Storage.getById(Long.parseLong(id)));
 
-
-
         req.getRequestDispatcher("WEB-INF/update.jsp").forward(req, resp);
-
     }
 
     @Override
@@ -34,8 +31,7 @@ public class UpdateServlet extends HttpServlet{
         String dueDate = req.getParameter("dueDate");
         String done = req.getParameter("done");
 
-
-        if (done != null && !done.isEmpty()) {
+        if (done!=null&&!done.isEmpty()) {
             Boolean bool = true;
             done = Boolean.toString(bool);
         } else {

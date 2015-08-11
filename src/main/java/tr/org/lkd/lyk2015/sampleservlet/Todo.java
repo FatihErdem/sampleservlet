@@ -63,11 +63,10 @@ public class Todo {
         this.done = done;
     }
 
-    public String getDate()
-    {
+    public String getDate() {
         Date date = this.dueDate.getTime();
         SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
-        String datetime= null;
+        String datetime = null;
         datetime = format1.format(date);
 
         return datetime;

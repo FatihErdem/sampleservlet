@@ -6,7 +6,7 @@ import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
 @WebListener
-public class InitWithStartup  implements ServletContextListener {
+public class InitWithStartup implements ServletContextListener {
 
 
     @Override

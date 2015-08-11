@@ -25,7 +25,7 @@
     <label>Is Done?</label>
     <input type="checkbox" name="done" <c:if test="${todo.done}">checked</c:if>>
     <br>
-<button>Update the Todo</button>
+    <button>Update the Todo</button>
 </form>
 
 <p>${message}</p>

@@ -29,7 +29,7 @@ public class Storage {
         todo.setDone(true);
     }
 
-    public static void updateTodo(Long id, String name, String desc, Calendar dueDate, Boolean done){
+    public static void updateTodo(Long id, String name, String desc, Calendar dueDate, Boolean done) {
         Todo todo = todos.get(id);
         todo.setName(name);
         todo.setDesc(desc);
